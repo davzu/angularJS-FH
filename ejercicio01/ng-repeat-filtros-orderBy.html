@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="ngRepeatFiltro">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		.avatar {
+			width: 75px;
+			height: 75px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container" ng-controller="listadoCtrl">
+		<h1>Filtros</h1>
+		<h4>Para el ng-repeat</h4>
+		<hr>
+
+		<div class="row">
+			Búsqueda:
+			<br>
+			<input type="text" class="form-control" ng-model="busqueda.nombre" placeholder="Ingrese lo que desea buscar">
+			<br>
+			Sexo:
+			<select class="form-control" ng-model="busqueda.sexo">
+				<option value="">Seleccione</option>
+				<option value="mujer">Mujeres</option>
+				<option value="hombre">Hombres</option>
+			</select>
+		</div>
+		<br>
+
+		<table class="table table-striped">
+			<tr>
+				<th>Avatar</th>
+				<th><a href="" ng-click="columna='nombre'; reverse=!reverse">Nombre</a></th>
+				<th><a href="" ng-click="columna='sexo'; reverse=!reverse">Sexo</a></th>
+				<th>Teléfono</th>
+				<th>Celular</th>
+			</tr>
+			<!-- <tr ng-repeat="persona in personas | filter:busqueda | orderBy:'nombre':reverse" | orderBy:'sexo':reverse1"></tr> -->
+			<tr ng-repeat="persona in personas | filter:busqueda | orderBy:columna:reverse">
+				<td>
+					<img src="img/avatar/{{persona.avatar}}" class="avatar rounded-circle"></img>
+				</td>
+				<td>{{persona.nombre}}</td>
+				<td>{{persona.sexo}}</td>
+				<td>{{persona.telefono}}</td>
+				<td>{{persona.celular}}</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/ng-repeat-filtros.js"></script>
+</body>
+
+</html>

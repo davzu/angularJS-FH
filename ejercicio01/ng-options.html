@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="ngOptions">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container" ng-controller="listadoCtrl">
+		<h1>ng-options</h1>
+		<h4>Repeticiones para elementos</h4>
+		<hr> País (ng-repeat):
+		<select class="form-control" ng-model="paisSeleccionado">
+			<option value="">Seleccione</option>
+			<option ng-repeat="pais in paises" value="{{pais.id}}">{{pais.nombre}}</option>
+		</select>
+		<br>
+
+		País (ng-options):
+		<select class="form-control" ng-model="paisSeleccionado" ng-options="pais.id as pais.nombre for pais in paises">
+			<option value="">Seleccione</option>
+		</select>
+
+	</div>
+
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/ng-options.js"></script>
+</body>
+
+</html>
