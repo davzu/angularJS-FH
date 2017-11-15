@@ -12,6 +12,7 @@
 
 <body>
 
+	<!-- si tuviera una variable en el controlador (this.variable) se tendrá que hacer referencia a través de la referencia en el html (profe.variable). Si la variable está en el scope, no será necesario -->
 	<div class="container" ng-controller="profesorCtrl as profe">
 		<h1>Profesor</h1>
 		<h4>{{profesor.nombre}}</h4>
@@ -36,7 +37,8 @@
 						<br>
 						<br>
 						<strong>Edad:</strong> {{profesor.edad}} años
-						<br><br>
+						<br>
+						<br>
 						<button class="btn btn-primary" ng-click="editar()">Editar</button>
 					</div>
 				</section>
@@ -44,16 +46,14 @@
 		</div>
 
 		<br>
-		<!-- <div class="row" ng-show="mostrarMantenimiento"> -->
-			<div class="row" ng-hide="!mostrarMantenimiento">
+
+		<div class="row" ng-hide="!mostrarMantenimiento">
 			<div class="col-sm-6">
 				<section class="panel">
 					<div class="panel-body">
 						Nombre:
-						<input type="text" class="form-control" ng-model="editando.nombre">
-						Edad:
-						<input type="text" class="form-control" ng-model="editando.edad">
-						Biografía:
+						<input type="text" class="form-control" ng-model="editando.nombre"> Edad:
+						<input type="text" class="form-control" ng-model="editando.edad"> Biografía:
 						<br>
 						<textarea class="form-control" rows="5" ng-model="editando.bio"></textarea>
 						<br>
