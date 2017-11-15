@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="ngRepeat">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container" ng-controller="listadoCtrl">
+		<h1>ng-repeat</h1>
+		<h4>Manejando repeticiones</h4>
+		<hr>
+
+		<ul>
+			<li ng-repeat="(indice, nombre) in listado">Key: {{indice}} Value: {{nombre}}</li>
+		</ul>
+		<hr>
+		<ul>
+			<li ng-repeat="nombre in listado">{{nombre}}</li>
+		</ul>
+
+		<table class="table table-striped">
+			<tr>
+				<th>Nombre</th>
+				<th>Edad</th>
+				<th>Clase</th>
+			</tr>
+			<tr ng-repeat="profesor in listadoProfesores">
+				<td>{{profesor.nombre}}</td>
+				<td>{{profesor.edad}}</td>
+				<td>{{profesor.curso}}</td>
+			</tr>
+		</table>
+
+
+		{{listado}}
+		<br> {{listado | json}}
+		<br> {{listadoProfesores | json}}
+	</div>
+
+
+
+
+
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/ng-repeat.js"></script>
+</body>
+
+</html>
