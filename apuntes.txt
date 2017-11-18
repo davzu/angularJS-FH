@@ -1,0 +1,14 @@
+
+============================== http-server
+Para ejecutar como servidor:
+Instalar http-server
+>npm install http-server -g
+
+Para ejecutar indicar el directorio
+>http-server 'path/to/your/angular/root/directory'
+Para ejecutar en el directorio actual
+>http-server .
+
+Nota: Actualizar refrescando la página, no solo ingresando a ella.
+Si hay una página embebida en otra, se debe actualizar la sub página primero para que se visualice en la página principal.
+También actualizar los js.

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="httpApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container" ng-controller="servicioCtrl">
+		<h1>ng-include</h1>
+		<h4>Data dinámica</h4>
+		<hr>
+
+		<!-- ng-include, realiza una petición Ajax, para traer el contenido del archivo que se encuentre en la dirección especificada -->
+
+		<div ng-include="tblPersonas"></div>
+
+	</div>
+
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/http-request.js"></script>
+</body>
+</html>
